@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<metainfo>
+    <schemaVersion>2.0</schemaVersion>
+    <services>
+        <service>
+            <name>MAVEN_NEXUS</name>
+            <displayName>Maven Nexus</displayName>
+            <comment>Nexus is an open source Web interface for maven repository manager</comment>
+            <version>3.6.0</version>
+            <!-- components -->
+            <components>
+                <component>
+                    <name>NEXUS_SERVER</name>
+                    <displayName>Nexus Server</displayName>
+                    <category>MASTER</category>
+                    <cardinality>1</cardinality>
+                    <commandScript>
+                        <script>scripts/nexus.server.py</script>
+                        <scriptType>PYTHON</scriptType>
+                        <timeout>1200</timeout>
+                    </commandScript>
+                </component>
+            </components>
+            <osSpecifics>
+                <osSpecific>
+                    <osFamily>any</osFamily>
+                </osSpecific>
+            </osSpecifics>
+            <restartRequiredAfterChange>true</restartRequiredAfterChange>
+        </service>
+    </services>
+</metainfo>
